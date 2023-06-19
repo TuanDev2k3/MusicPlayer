@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- ICON -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+
+    <!-- GG Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio src="" id="audio"></audio>
+    <input type="file" id="fileInput" accept=".mp3" />
+        <div class="container">
+        <div class="music-icon">
+            <!-- <i class="fas fa-arrow-left"></i> -->
+            <label for="fileInput"><i class="fas fa-plus plus"></i></label>
+            <span>Uong Minh Khai</span>
+            <i class="fas fa-bars menu-song"></i>
+        </div>
+        <div class="music-img">
+            <img src="./hero.jpg" alt="img">
+        </div>
+        <div class="player-music"></div>
+        <input type="range" value="0" class="range-song">
+        <div class="song-time">
+            <span class="time-start">00:00</span>
+            <span class="time-end">00:00</span>
+        </div>
+        <div class="music-bnt">
+            <button class="back"><i class="fas fa-backward"></i></button>
+            <button class="play-pause">
+                <i class="fas fa-pause pause"></i>
+                <i class="fas fa-play play"></i> 
+            </button>
+            <button class="next"><i class="fas fa-forward"></i></button>
+        </div>
+
+        <div id="list-song">
+            <div class="music-icon">
+                <h2>DANH SÁCH NHẠC</h2>
+                <i class="fas fa-arrow-right close"></i>
+            </div>
+            <div class="list-music"></div>
+        </div>
+    </div>
+    <!-- List Music -->
+        
+    <script src="app.js"></script>
+</body>
+</html>
