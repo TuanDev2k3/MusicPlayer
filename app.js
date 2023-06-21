@@ -60,6 +60,17 @@ musicPause.onclick = () =>{
     dist.classList.remove('play');
     music.pause();
 }
+// format time music
+const formatTime = (time) =>{
+    let min = Math.floor(time / 60);
+    if (min < 10) 
+        min = `0${min}`;
+    let sec = Math.floor(time % 60);
+    if (sec < 10) 
+        sec = `0${sec}`;
+    return `${min} : ${sec}`;
+}
+
 // Setup music
 const setMusic = (i) =>{
     seekBar.value = 0; //range slide to 0
@@ -75,15 +86,7 @@ const setMusic = (i) =>{
 }
 setMusic(0);
 
-const formatTime = (time) =>{
-    let min = Math.floor(time / 60);
-    if (min < 10) 
-        min = `0${min}`;
-    let sec = Math.floor(time % 60);
-    if (sec < 10) 
-        sec = `0${sec}`;
-    return `${min} : ${sec}`;
-}
+
 // Next or Back Music
 const PlayMusic = () =>{
     music.play();
