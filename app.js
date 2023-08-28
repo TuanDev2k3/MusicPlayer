@@ -113,7 +113,7 @@ btnBack.onclick = () =>{
 setInterval(() =>{
     seekBar.value = music.currentTime;
     currenTime.innerHTML = formatTime(music.currentTime);
-    if (Math.floor(music.currentTime) === Math.floor(seekBar.max))
+    if (Math.floor(music.currentTime) === Math.floor(music.duration))
         btnNext.click();
 }, 500)
 seekBar.oninput = () =>{
