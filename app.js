@@ -1,12 +1,12 @@
 let currenMusic = 0;
 const songs = [
     {
-        name: 'Xin - Bray & Dat G (Mix Masew)',
-        path: './music/Xin_Bray.mp3',
+        name: 'Hoa Tuong Tu',
+        path: './music/Hoa_Tuong_Tu.mp3',
     },
     {
-        name: '7 Anh Em Chung Ta',
-        path: './music/7Anh_em.mp3',
+        name: 'Ngay Mai Em Di Mat',
+        path: './music/Ngay_Mai_Em_Đi_Mat.mp3',
     },
     {
         name: 'Ai - Bray',
@@ -21,8 +21,8 @@ const songs = [
         path: './music/Du_Tien.mp3',
     },
     {
-        name: 'Thuong Nhieu Hon La Noi - Bray',
-        path: './music/ThuongNhieuHonLaNoi.mp3',
+        name: 'Ngay Mai Nguoi Ta Lay Chong',
+        path: './music/Ngay_Mai_Ng_Ta_Lay_Chong.mp3',
     },
     {
         name: 'BSNL 2 - Bray',
@@ -116,7 +116,7 @@ setInterval(() =>{
     if (Math.floor(music.currentTime) == Math.floor(seekBar.max))
         btnNext.click();
 }, 500)
-seekBar.onchange = () =>{
+seekBar.oninput = () =>{
     music.currentTime = seekBar.value;
 }
 
