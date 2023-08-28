@@ -79,10 +79,8 @@ const setMusic = (i) =>{
     songName.innerHTML = song.name;
     currenMusic = i;
     currenTime.innerHTML = '00:00';
-    setTimeout(() =>{
-        seekBar.max = music.duration;
-        timeEnd.innerHTML = formatTime(seekBar.max);
-    }, 500)
+    seekBar.max = music.duration;
+    timeEnd.innerHTML = formatTime(seekBar.max);
 }
 setMusic(0);
 
