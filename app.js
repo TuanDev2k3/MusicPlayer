@@ -79,8 +79,10 @@ const setMusic = (i) =>{
     songName.innerHTML = song.name;
     currenMusic = i;
     currenTime.innerHTML = '00:00';
-    seekBar.max = music.duration;
-    timeEnd.innerHTML = formatTime(seekBar.max);
+    setTimeout(()=>{
+        seekBar.max = music.duration;
+        timeEnd.innerHTML = formatTime(music.duration);
+    }, 100)
 }
 setMusic(0);
 
@@ -111,7 +113,7 @@ btnBack.onclick = () =>{
 setInterval(() =>{
     seekBar.value = music.currentTime;
     currenTime.innerHTML = formatTime(music.currentTime);
-    if (Math.floor(music.currentTime) == Math.floor(seekBar.max))
+    if (Math.floor(music.currentTime) === Math.floor(seekBar.max))
         btnNext.click();
 }, 500)
 seekBar.oninput = () =>{
