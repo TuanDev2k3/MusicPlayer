@@ -61,7 +61,7 @@ musicPause.onclick = () =>{
     music.pause();
 }
 // format time music
-const formatTime = (time) =>{
+function formatTime(time){
     let min = Math.floor(time / 60);
     if (min < 10) 
         min = `0${min}`;
@@ -79,10 +79,6 @@ const setMusic = (i) =>{
     songName.innerHTML = song.name;
     currenMusic = i;
     currenTime.innerHTML = '00:00';
-    setTimeout(()=>{
-        seekBar.max = music.duration;
-        timeEnd.innerHTML = formatTime(music.duration);
-    }, 100)
 }
 setMusic(0);
 
@@ -113,9 +109,11 @@ btnBack.onclick = () =>{
 setInterval(() =>{
     seekBar.value = music.currentTime;
     currenTime.innerHTML = formatTime(music.currentTime);
+    seekBar.max = music.duration;
+    timeEnd.innerHTML = formatTime(music.duration);
     if (Math.floor(music.currentTime) === Math.floor(music.duration))
         btnNext.click();
-}, 500)
+}, 100)
 seekBar.oninput = () =>{
     music.currentTime = seekBar.value;
 }
